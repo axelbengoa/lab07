@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font and Border Control</title>
+    <style>
+        #custom-text {
+            border: 2px solid black;
+            padding: 10px;
+            width: fit-content;
+            margin: 20px auto;
+        }
+        .input-group {
+            margin-bottom: 10px;
+        }
+        label {
+            display: inline-block;
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Control Paragraph Color and Border Width</h2>
+    <p id="custom-text">This is a sample paragraph.</p>
+
+    <!-- Input fields for RGB colors -->
+    <div class="input-group">
+        <label for="red">Enter Red Value (0-255):</label>
+        <input type="text" id="red" placeholder="e.g. 255">
+    </div>
+    <div class="input-group">
+        <label for="green">Enter Green Value (0-255):</label>
+        <input type="text" id="green" placeholder="e.g. 0">
+    </div>
+    <div class="input-group">
+        <label for="blue">Enter Blue Value (0-255):</label>
+        <input type="text" id="blue" placeholder="e.g. 0">
+    </div>
+
+    <!-- Input field for border width -->
+    <div class="input-group">
+        <label for="border-width">Enter Border Width (px):</label>
+        <input type="text" id="border-width" placeholder="e.g. 5">
+    </div>
+
+    <!-- Button to apply the styles -->
+    <button onclick="applyStyles()">Apply Styles</button>
+
+    <script>
+        function applyStyles() {
+            // Get the RGB values from the input fields
+            var red = document.getElementById('red').value || 0;
+            var green = document.getElementById('green').value || 0;
+            var blue = document.getElementById('blue').value || 0;
+            
+            // Get the border width value
+            var borderWidth = document.getElementById('border-width').value || 2;
+            
+            // Apply the styles to the paragraph
+            document.getElementById('custom-text').style.color = `rgb(${red}, ${green}, ${blue})`;
+            document.getElementById('custom-text').style.borderWidth = `${borderWidth}px`;
+        }
+    </script>
+</body>
+</html>
+
